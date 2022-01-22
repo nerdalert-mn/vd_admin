@@ -1,4 +1,4 @@
-package com.example.vd_admin
+package com.nerdalet.rtvd_admin
 
 import io.flutter.embedding.android.FlutterActivity
 

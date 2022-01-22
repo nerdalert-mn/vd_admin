@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "161437126606",
+    "project_id": "rtvd-test",
+    "storage_bucket": "rtvd-test.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:161437126606:android:84e19a3d731a70ced9659f",
+        "android_client_info": {
+          "package_name": "com.nerdalet.rtvd_admin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "161437126606-4e4tgpul906rjfbrbsmjnaivlagipbrj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBg3ZyMX3dZn4qmM4XepgAcQTFkiq4LRag"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "161437126606-4e4tgpul906rjfbrbsmjnaivlagipbrj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
