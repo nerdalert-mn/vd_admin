@@ -12,7 +12,7 @@ class BottomTabsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return PersistentTabView(
       context,
-      screens: const [
+      screens: [
         HomePage(),
         HistoryPage(),
         ProfilePage(),

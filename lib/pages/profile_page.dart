@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:vd_admin/controller/auth_controller.dart';
+import 'package:vd_admin/pages/login_page.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final auth = Get.find<AuthController>();
     return Scaffold(
       body: SafeArea(
         child: Container(
@@ -25,7 +28,7 @@ class ProfilePage extends StatelessWidget {
                           Icon(Icons.person,
                               size: Get.size.width * 0.2, color: Colors.pink),
                           Text(
-                            'Д.Болдбаатар',
+                            auth.getLoggedInUser()?.email ?? '',
                             style: const TextStyle(
                                 fontWeight: FontWeight.bold, fontSize: 21),
                           ),
@@ -33,22 +36,34 @@ class ProfilePage extends StatelessWidget {
                       ),
                     ),
                     ListTile(
-                      title: Text('Утас'),
-                      subtitle: Text('89983847'),
-                    ),
-                    ListTile(
-                      title: Text('email'),
-                      subtitle: Text('boldoo33@gmail.com'),
-                    ),
-                    ListTile(
                         title: Container(
                       height: 45,
-                      child: ElevatedButton(
-                          onPressed: () {}, child: Text('Нууц үг солих')),
+                      child: Obx(() {
+                        if (auth.isPasswordResetLoading.value) {
+                          return const Center(
+                            child: CircularProgressIndicator(),
+                          );
+                        }
+                        return ElevatedButton(
+                            onPressed: () {
+                              auth.sendPasswordReset(context);
+                            },
+                            child: Text('Нууц үг солих'));
+                      }),
                     )),
-                    ListTile(
-                        title: Container(
-                      child: TextButton(onPressed: () {}, child: Text('Гарах')),
+                    ListTile(title: Container(
+                      child: Obx(() {
+                        if (auth.isLogoutLoading.value) {
+                          return const Center(
+                            child: CircularProgressIndicator(),
+                          );
+                        }
+                        return TextButton(
+                            onPressed: () {
+                              auth.logout();
+                            },
+                            child: Text('Гарах'));
+                      }),
                     )),
                   ],
                 ),

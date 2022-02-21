@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:vd_admin/controller/login_controller.dart';
+import 'package:vd_admin/controller/alert_controller.dart';
+import 'package:vd_admin/controller/auth_controller.dart';
+import 'package:vd_admin/controller/new_detection_controller.dart';
+import 'package:vd_admin/controller/notification_controller.dart';
+import 'package:vd_admin/pages/loading_page.dart';
 import './pages/login_page.dart';
 
 class App extends StatelessWidget {
@@ -9,7 +13,10 @@ class App extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    Get.put(LoginController());
+    Get.put(AlertController());
+    Get.put(AuthController());
+    Get.put(NotificationController());
+    Get.put(NewDetectionController());
     return GetMaterialApp(
         title: 'Violence Detection',
         theme: ThemeData(
@@ -25,6 +32,6 @@ class App extends StatelessWidget {
             primarySwatch: Colors.pink,
             primaryColor: Colors.pink,
             appBarTheme: const AppBarTheme(elevation: 0)),
-        home: LoginPage());
+        home: const LoadingPage());
   }
 }
