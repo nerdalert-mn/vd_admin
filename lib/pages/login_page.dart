@@ -27,8 +27,10 @@ class LoginPage extends StatelessWidget {
             children: [
               Container(
                 margin: const EdgeInsets.only(bottom: 25),
-                child: FlutterLogo(
-                  size: Get.size.width * 0.33,
+                child: Image.asset(
+                  'assets/logo.png',
+                  width: Get.size.width * 0.33,
+                  height: Get.size.width * 0.33,
                 ),
               ),
               Form(

@@ -4,6 +4,7 @@ import 'package:vd_admin/controller/alert_controller.dart';
 import 'package:vd_admin/controller/auth_controller.dart';
 import 'package:vd_admin/controller/new_detection_controller.dart';
 import 'package:vd_admin/controller/notification_controller.dart';
+import 'package:vd_admin/pages/IntroPage.dart';
 import 'package:vd_admin/pages/loading_page.dart';
 import './pages/login_page.dart';
 
@@ -32,6 +33,6 @@ class App extends StatelessWidget {
             primarySwatch: Colors.pink,
             primaryColor: Colors.pink,
             appBarTheme: const AppBarTheme(elevation: 0)),
-        home: const LoadingPage());
+        home: const IntroPage());
   }
 }

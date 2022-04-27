@@ -6,6 +6,7 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:vd_admin/controller/alert_controller.dart';
+import 'package:vd_admin/pages/IntroPage.dart';
 import 'package:vd_admin/pages/bottom_tabs_page.dart';
 import 'package:vd_admin/pages/home_page.dart';
 import 'package:vd_admin/pages/login_page.dart';
@@ -23,7 +24,7 @@ class AuthController extends GetxController {
     _authSubscription =
         FirebaseAuth.instance.authStateChanges().listen((User? user) async {
       if (user == null) {
-        Get.offAll(() => LoginPage());
+        Get.offAll(() => const IntroPage());
         isLoginLoading.value = false;
       } else {
         _user = user;
